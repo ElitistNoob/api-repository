@@ -14,18 +14,20 @@ body {
   font-family: "Montserrat", sans-serif;
 
   --primary-bg: #1c1c1c;
-  --secondary-bg: #0f0f0f;
+  --secondary-bg: #171717;
+  --secondary-bg-mobile: #0f0f0f;
   --border-dark: #131313;
   --text-light: #e7e7e7;
   --highlight: #fc7a1e;
   --search-bar: #131313;
   --sidebar-bg-mobile: #0f0f0f;
-  --category-bg: #fc7a1e;
+  --category-bg: #1c1c1c;
 }
 
 body.light {
   --primary-bg: #fff;
   --secondary-bg: #f0f0f0;
+  --secondary-bg-mobile: #f0f0f0;
   --border-dark: #a1a1a1;
   --text-light: #1c1c1c;
   --highlight: #fc7a1e;
@@ -232,7 +234,6 @@ LAYOUT
 @media (max-width: 920px) {
   .category {
     background: var(--category-bg);
-    color: #1c1c1c;
     margin: 0;
   }
 }
@@ -294,6 +295,12 @@ LAYOUT
   height: 300px;
   cursor: pointer;
   border: 1px solid var(--border-dark);
+}
+
+@media (max-width: 920px) {
+  .api__card {
+    background-color: var(--secondary-bg-mobile);
+  }
 }
 
 @media (hover: hover) {

@@ -15,27 +15,27 @@ body {
 }
 
 body.dark {
-  --primary-bg: #1c1c1c;
-  --secondary-bg: #171717;
-  --secondary-bg-mobile: #0f0f0f;
-  --border-dark: #131313;
+  --primary-bg: #202634;
+  --secondary-bg: #202634;
+  --border-dark: #141720;
   --text-light: #e7e7e7;
   --highlight: #fc7a1e;
-  --search-bar: #131313;
-  --sidebar-bg-mobile: #0f0f0f;
-  --category-bg: #1c1c1c;
+  --search-bar: #283044;
+  --category-bg: #283044;
+  --card-bg: #283044;
+  --card-desc-border: #141720;
 }
 
 body.light {
-  --primary-bg: #fff;
-  --secondary-bg: #f0f0f0;
-  --secondary-bg-mobile: #f0f0f0;
-  --border-dark: #a1a1a1;
+  --primary-bg: #f6f8f7;
+  --secondary-bg: #fff;
+  --border-dark: #e6e5e5;
   --text-light: #1c1c1c;
   --highlight: #fc7a1e;
-  --search-bar: #fff;
-  --sidebar-bg-mobile: #f0f0f0;
-  --category-bg: #fff;
+  --search-bar: #f6f8f7;
+  --category-bg: #f6f8f7;
+  --card-bg: #fff;
+  --card-desc-border: #e6e5e5;
 }
 
 /* === 
@@ -138,10 +138,9 @@ input[type="checkbox"] {
   padding: 1.8em;
   border-radius: 3px;
   outline: none;
-  background-color: #1c1c1c;
   background: url("https://api.iconify.design/bi/moon-fill.svg?color=%23fc7a1e&width=24")
       no-repeat center center,
-    #1c1c1c;
+    #283044;
   cursor: pointer;
   margin: 0;
 }
@@ -149,7 +148,7 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background: url("https://api.iconify.design/clarity/sun-solid.svg?color=%23fc7a1e&width=32")
       no-repeat center center,
-    #fff;
+    #f6f8f7;
 }
 
 /* === 
@@ -183,8 +182,14 @@ LAYOUT
   .sidebar {
     width: 100%;
     min-height: auto;
-    background-color: var(--sidebar-bg-mobile);
     padding: 1.5em 2em;
+    border-bottom: 1px solid var(--border-dark);
+  }
+}
+
+@media (max-width: 360px) {
+  .sidebar {
+    padding-inline: 1em;
   }
 }
 
@@ -221,7 +226,7 @@ LAYOUT
 .category {
   background: linear-gradient(
     90deg,
-    var(--primary-bg) 0%,
+    var(--category-bg) 0%,
     var(--secondary-bg) 33%
   );
   transition: 150ms linear;
@@ -261,7 +266,7 @@ LAYOUT
 
 @media (max-width: 360px) {
   #apis-list {
-    padding-inline: 0.5em;
+    padding-inline: 1em;
   }
 }
 
@@ -291,7 +296,7 @@ LAYOUT
 .api__card {
   display: grid;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-  background-color: var(--secondary-bg);
+  background-color: var(--card-bg);
   padding: 1em 2em;
   border-radius: 8px;
   height: 300px;
@@ -299,15 +304,9 @@ LAYOUT
   border: 1px solid var(--border-dark);
 }
 
-@media (max-width: 920px) {
-  .api__card {
-    background-color: var(--secondary-bg-mobile);
-  }
-}
-
 @media (hover: hover) {
   .api__card:hover {
-    border: 1px solid var(--highlight);
+    transform: scale(1.01);
   }
 }
 
@@ -356,6 +355,7 @@ LAYOUT
   background-color: var(--primary-bg);
   color: var(--text-light);
   padding: 1em;
+  border: 1px solid var(--card-desc-border);
   border-radius: 5px;
   grid-row: 3 / -1;
   grid-column: span 4;

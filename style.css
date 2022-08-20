@@ -14,11 +14,13 @@ body {
   font-family: "Montserrat", sans-serif;
 
   --primary-bg: #1c1c1c;
-  --secondary-bg: #171717;
+  --secondary-bg: #0f0f0f;
   --border-dark: #131313;
   --text-light: #e7e7e7;
   --highlight: #fc7a1e;
   --search-bar: #131313;
+  --sidebar-bg-mobile: #0f0f0f;
+  --category-bg: #fc7a1e;
 }
 
 body.light {
@@ -28,6 +30,8 @@ body.light {
   --text-light: #1c1c1c;
   --highlight: #fc7a1e;
   --search-bar: #fff;
+  --sidebar-bg-mobile: #f0f0f0;
+  --category-bg: #fff;
 }
 
 /* === 
@@ -153,6 +157,7 @@ LAYOUT
 .page-grid {
   display: grid;
   grid-template-columns: 365px 1fr;
+  overflow-x: hidden;
 }
 
 @media (max-width: 920px) {
@@ -174,6 +179,8 @@ LAYOUT
   .sidebar {
     width: 100%;
     min-height: auto;
+    background-color: var(--sidebar-bg-mobile);
+    padding: 1.5em 2em;
   }
 }
 
@@ -195,7 +202,7 @@ LAYOUT
     position: relative;
     display: flex;
     gap: 1em;
-    margin-block: 2em 0;
+    margin-block: 1.5em 0;
 
     max-width: none;
     width: 100%;
@@ -224,18 +231,19 @@ LAYOUT
 
 @media (max-width: 920px) {
   .category {
-    width: fit-content;
-    height: fit-content;
-    background: var(--primary-bg);
+    background: var(--category-bg);
+    color: #1c1c1c;
     margin: 0;
   }
 }
 
-.category:hover {
-  transform: perspective(15cm) rotateY(15deg);
-  cursor: pointer;
-  background: var(--highlight);
-  color: var(--secondary-bg);
+@media (hover: hover) {
+  .category:hover {
+    transform: perspective(15cm) rotateY(15deg);
+    cursor: pointer;
+    background: var(--highlight);
+    color: var(--secondary-bg);
+  }
 }
 
 #apis-list {
@@ -271,6 +279,12 @@ LAYOUT
   margin-bottom: 0;
 }
 
+@media (max-width: 920px) {
+  .api-container-h1 {
+    margin-top: 1em;
+  }
+}
+
 .api__card {
   display: grid;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
@@ -282,8 +296,10 @@ LAYOUT
   border: 1px solid var(--border-dark);
 }
 
-.api__card:hover {
-  border: 1px solid var(--highlight);
+@media (hover: hover) {
+  .api__card:hover {
+    border: 1px solid var(--highlight);
+  }
 }
 
 .api__title {

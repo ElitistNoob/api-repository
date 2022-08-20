@@ -201,7 +201,8 @@ LAYOUT
   width: 100%;
   min-height: 75vh;
   height: 75vh;
-
+  
+  overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
 }

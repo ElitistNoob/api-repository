@@ -32,28 +32,25 @@ clickHandler.addEventListener('click', () => {
   resetTheme()
 })
 
-if (currentMode === null || currentMode === 'dark') {
-  bodyClassList.add('dark')
-} else if (currentMode === 'light') {
+if (currentMode === 'light') {
   bodyClassList.add('light')
-} 
-
-const classSwitch = (remove, add) => {
-  bodyClassList.remove(remove)
-  bodyClassList.add(add)
+} else if (currentMode === null && bodyClassList.contains('')) {
+  bodyClassList.removeAttribute('class')
 }
 
-const storageHandler = (remove, add) => {
-  localStorage.removeItem('mode', remove)
-  localStorage.setItem('mode', add)
+const classSwitch = () => {
+  if (bodyClassList.contains('light')) {
+    bodyClassList.remove('light')
+  } else {
+    bodyClassList.add('light')
+  } 
 }
 
 const resetTheme = () => {
+  classSwitch()
   if (clickHandler.checked) {
-    classSwitch('dark', 'light')
-    storageHandler('dark', 'light')
+    localStorage.removeItem('mode', 'light')
   } else {
-    classSwitch('light', 'dark')
-    storageHandler('light', 'dark')
+    localStorage.setItem('mode', 'light')
   }
 }

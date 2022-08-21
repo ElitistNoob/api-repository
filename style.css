@@ -21,7 +21,7 @@ body {
   --search-bar: #283044;
   --category-bg: #283044;
   --card-bg: #283044;
-  --api-category-bg: #e7e7e7;
+  --api-category-bg: #323c53;
   --card-desc-border: #141720;
   --theme-btn: url("https://api.iconify.design/bi/moon-fill.svg?color=%23fc7a1e&width=24")
       no-repeat center center,
@@ -36,7 +36,7 @@ body.light {
   --highlight: #fc7a1e;
   --search-bar: #f6f8f7;
   --category-bg: #f6f8f7;
-  --api-category-bg: #1c1c1c;
+  --api-category-bg: #e6e5e5;
   --card-bg: #fff;
   --card-desc-border: #e6e5e5;
   --theme-btn: url("https://api.iconify.design/clarity/sun-solid.svg?color=%23fc7a1e&width=32")
@@ -356,7 +356,7 @@ LAYOUT
 .api__category {
   grid-area: category;
   background-color: var(--api-category-bg);
-  color: var(--secondary-bg);
+  color: var(--text-light);
   font-weight: 700;
   letter-spacing: 0.1em;
 }

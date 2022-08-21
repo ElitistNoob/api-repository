@@ -24,6 +24,7 @@ body.dark {
   --category-bg: #283044;
   --card-bg: #283044;
   --card-desc-border: #141720;
+  --theme-btn: #283044;
 }
 
 body.light {
@@ -36,6 +37,7 @@ body.light {
   --category-bg: #f6f8f7;
   --card-bg: #fff;
   --card-desc-border: #e6e5e5;
+  --theme-btn: #f6f8f7;
 }
 
 /* === 
@@ -140,7 +142,7 @@ input[type="checkbox"] {
   outline: none;
   background: url("https://api.iconify.design/bi/moon-fill.svg?color=%23fc7a1e&width=24")
       no-repeat center center,
-    #283044;
+    var(--theme-btn);
   cursor: pointer;
   margin: 0;
 }
@@ -148,7 +150,7 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background: url("https://api.iconify.design/clarity/sun-solid.svg?color=%23fc7a1e&width=32")
       no-repeat center center,
-    #f6f8f7;
+    var(--theme-btn);
 }
 
 /* === 

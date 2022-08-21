@@ -12,9 +12,7 @@ body {
   background-color: var(--primary-bg);
   color: var(--text-light);
   font-family: "Montserrat", sans-serif;
-}
 
-body.dark {
   --primary-bg: #202634;
   --secondary-bg: #202634;
   --border-dark: #141720;
@@ -122,6 +120,7 @@ SEARCH BAR
   font-size: 1rem;
   max-height: 50px;
   box-sizing: border-box;
+  margin-top: 1rem;
 }
 
 #search-bar:focus {
@@ -147,6 +146,7 @@ input[type="checkbox"] {
   background: var(--theme-btn);
   cursor: pointer;
   margin: 0;
+  margin-top: 1rem;
 }
 
 input[type="checkbox"]:checked {

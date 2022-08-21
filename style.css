@@ -103,6 +103,13 @@ UTILITIES
   grid-column: span 4;
 }
 
+@media(max-width: 480px) {
+  .wrapper {
+    grid-column: span 4;
+    grid-row: 4;
+  }
+}
+
 /* ===
 SEARCH BAR
 ==== */
@@ -203,9 +210,9 @@ LAYOUT
   width: 100%;
   min-height: 75vh;
   height: 75vh;
-  
-  overflow-x: hidden;
+
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 
@@ -225,7 +232,7 @@ LAYOUT
     width: 100%;
     min-height: auto;
     height: fit-content;
-
+    -ms-scroll-rails: none;
     scrollbar-width: none;
     overflow-x: scroll;
   }
@@ -303,7 +310,7 @@ LAYOUT
 
 .api__card {
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+  grid-template: min-content min-content 1fr min-content / repeat(3, 1fr);
   background-color: var(--card-bg);
   padding: 1em 2em;
   border-radius: 8px;
@@ -325,6 +332,12 @@ LAYOUT
   letter-spacing: 1px;
 }
 
+@media(max-width: 480px) {
+  .api__title {
+    grid-column: span 4;
+  }
+}
+
 .api__auth,
 .api__https,
 .api__cors,
@@ -341,6 +354,7 @@ LAYOUT
 .api__https,
 .api__cors {
   color: #e7e7e7;
+  margin-block: 1.5em;
 }
 
 .api__https,
@@ -359,6 +373,15 @@ LAYOUT
   letter-spacing: 0.1em;
 }
 
+@media(max-width: 480px) {
+  .api__category {
+    grid-column: span 4;
+    grid-row: 2 / 3;
+    place-self: center start;
+    margin-block: 1.5em;
+  }
+}
+
 .api__desc {
   background-color: var(--primary-bg);
   color: var(--text-light);
@@ -372,4 +395,11 @@ LAYOUT
   letter-spacing: 0.1em;
   font-weight: 400;
   font-size: 0.925rem;
+}
+
+@media(max-width: 480px) {
+  .api__desc {
+    grid-column: span 4;
+    grid-row: 3;
+  }
 }

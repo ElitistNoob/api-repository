@@ -34,7 +34,7 @@ clickHandler.addEventListener('click', () => {
 
 if (currentMode === 'light') {
   bodyClassList.add('light')
-} else if (currentMode === null && bodyClassList.contains('')) {
+} else if (currentMode === null) {
   bodyClassList.removeAttribute('class')
 }
 
@@ -55,9 +55,7 @@ const resetTheme = () => {
   classSwitch()
   if (clickHandler.checked) {
     StorageHandler('light', 'dark')
-    
   } else {
-    localStorage.setItem('mode', 'light')
     StorageHandler('dark', 'light')
   }
 }

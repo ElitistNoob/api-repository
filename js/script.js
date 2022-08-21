@@ -46,11 +46,18 @@ const classSwitch = () => {
   } 
 }
 
+const StorageHandler = (remove, add) => {
+  localStorage.removeItem('mode', remove)
+  localStorage.setItem('mode', add)
+}
+
 const resetTheme = () => {
   classSwitch()
   if (clickHandler.checked) {
-    localStorage.removeItem('mode', 'light')
+    StorageHandler('light', 'dark')
+    
   } else {
     localStorage.setItem('mode', 'light')
+    StorageHandler('dark', 'light')
   }
 }

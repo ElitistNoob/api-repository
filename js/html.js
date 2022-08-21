@@ -18,10 +18,9 @@ document.querySelector('.categories-menu').innerHTML += `
 const getAPIHtml = (api) => {
   const { API, Description, Auth, HTTPS, Cors, Link, Category} = api
   return `
-    <a href="${Link}" target="_blank">
       <div class="api__card">
           <h3 class="api__title">${API}</h3>
-          <p class="api__desc">${Description}</p>
+          <p class="api__desc">${Description}  <br> <a href="${Link}" target="_blank">read documentation</a></p>
           <div class="wrapper">
             <p class="api__auth ${Auth ? "show" : "hide"}" style="background-color: #224431;">${Auth}</p>
             <p class="api__https ${HTTPS ? "show" : "hide"}" style="background-color: #315E44;":>HTTPS</p>
@@ -29,7 +28,6 @@ const getAPIHtml = (api) => {
           </div> 
           <p class="api__category">${Category}</p>
       </div>
-    </a>
   `
 }
 

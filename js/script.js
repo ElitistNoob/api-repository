@@ -28,14 +28,14 @@ getAPICategories().then(categories => {
 
 
 // SAVES THEME PREFERENCE TO LOCAL STORAGE IF  NO PREFERENCE WILL DEFAULT TO DARK
-clickHandler.addEventListener('click', () => {
-  resetTheme()
-})
+localStorage.getItem('mode')
 
 if (currentMode === 'light') {
   bodyClassList.add('light')
 } else if (currentMode === null) {
-  bodyClassList.removeAttribute('class')
+  if (bodyClassList.contains('light')) {
+    bodyClassList.removeAttribute('class')
+  }
 }
 
 const classSwitch = () => {
@@ -46,16 +46,19 @@ const classSwitch = () => {
   } 
 }
 
-const StorageHandler = (remove, add) => {
-  localStorage.removeItem('mode', remove)
+const StorageHandler = (add) => {
   localStorage.setItem('mode', add)
 }
 
 const resetTheme = () => {
   classSwitch()
   if (clickHandler.checked) {
-    StorageHandler('light', 'dark')
+    StorageHandler('dark')
   } else {
-    StorageHandler('dark', 'light')
+    StorageHandler('light')
   }
 }
+
+clickHandler.addEventListener('click', () => {
+  resetTheme()
+})

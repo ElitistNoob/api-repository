@@ -32,6 +32,7 @@ if (currentMode === 'light') {
   bodyClassList.add('light')
 } else if (currentMode === null) {
   if (bodyClassList.contains('light')) {
+    StorageHandler('dark')
     bodyClassList.removeAttribute('class')
   }
 }

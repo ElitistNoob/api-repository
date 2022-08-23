@@ -28,8 +28,6 @@ getAPICategories().then(categories => {
 
 
 // SAVES THEME PREFERENCE TO LOCAL STORAGE IF  NO PREFERENCE WILL DEFAULT TO DARK
-localStorage.getItem('mode')
-
 if (currentMode === 'light') {
   bodyClassList.add('light')
 } else if (currentMode === null) {
@@ -39,11 +37,7 @@ if (currentMode === 'light') {
 }
 
 const classSwitch = () => {
-  if (bodyClassList.contains('light')) {
-    bodyClassList.remove('light')
-  } else {
-    bodyClassList.add('light')
-  } 
+  bodyClassList.toggle('light')
 }
 
 const StorageHandler = (add) => {
